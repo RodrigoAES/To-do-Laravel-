@@ -1,4 +1,7 @@
 <x-layout>
+<x-slot name='btn'>
+    <x-button href=http://localhost:8000/task/new text='Criar tarefa'></x-button>
+</x-slot>
 <section class="graph">
     <div class="graph_header">
         <h2>Progresso do Dia</h2>
@@ -28,42 +31,10 @@
     </div>
 
     <div class="task_list">
-        <div class="task">
-            <div class="title">
-                <input type="checkbox" />
-                <h3 class="task_title">Titulo da tarefa</h3>
-            </div>
-
-            <div class="priority">
-                <div class="sphere"></div>
-                <div>Titulo da tarefa</div>
-            </div>
-
-            <div class="actions">
-                <a href="">
-                    <img src="/assets/images/icon-edit.png" alt="Icone de edição">
-                </a>
-                <a href="">
-                    <img src="/assets/images/icon-delete.png" alt="Icone de exclusão">
-                </a>
-            </div>
-        </div>
-
-        <div class="task">
-            <div class="title">
-                <input type="checkbox" />
-                <h3 class="task_title">Titulo da tarefa</h3>
-            </div>
-
-            <div class="priority">
-                <div class="sphere"></div>
-                <div>Titulo da tarefa</div>
-            </div>
-
-            <div class="actions">
-                Editar - Excluir
-            </div>
-        </div>
+    @foreach ($tasks as $task)
+        <x-task :data=$task/>
+    @endforeach
+        
     </div>
 </section>
 </x-layout>

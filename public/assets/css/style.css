@@ -53,6 +53,10 @@ nav{
     border-radius: 10px;
     text-decoration: none;
     transition: all .2s ease-in-out;
+    margin-left: 10px;
+    font-size: 16px;
+    border:none;
+    cursor: pointer;
 }
 .btn:hover {
     transform: scale(1.05);
@@ -155,7 +159,7 @@ section.list {
 }
 .task:hover {
     background-color:#C2BEEE;
-    transform: scale(1.05);
+    transform: scale(1.03);
     border-radius: 10px;
 }
 .title {
@@ -194,4 +198,45 @@ section.list {
 }
 .actions a:hover {
     transform: scale(1.4);
+}
+
+#task_section {
+    margin:auto;
+}
+#task_section h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input_area {
+    display: block;
+    margin:10px 0 10px 0;
+}
+.input_area label {
+    display: block;
+    margin-bottom: 5px;
+}
+.input_area input,
+.input_area select {
+    height:40px;
+    width:400px;
+    padding: 5px 10px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: rgba(255,255,255,0.5);
+}
+.input_area textarea {
+    width: 400px;
+    height:120px;
+    resize: none;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+form input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
 }

@@ -14,7 +14,7 @@
         </div>
         <div class="content">
             <nav>
-                <a class="btn btn-primary" href="">Criar tarefa</a>
+                {{$btn ?? null}}
             </nav>
 
             <main>
