@@ -209,7 +209,8 @@ section.list {
 }
 
 .input_area {
-    display: block;
+    display: flex;
+    flex-direction: column;
     margin:10px 0 10px 0;
 }
 .input_area label {
@@ -234,6 +235,10 @@ section.list {
     padding: 5px 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
+}
+.input_area .error {
+    font-size: 13px;
+    color:#ac1818;
 }
 form input[type="checkbox"] {
     width: 20px;

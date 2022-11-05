@@ -1,7 +1,9 @@
 <x-layout>
 <x-slot name='btn'>
     <x-button href=http://localhost:8000/task/new text='Criar tarefa'></x-button>
+    <x-button href="{{route('logout')}}" text='Sair'></x-button>
 </x-slot>
+    
 <section class="graph">
     <div class="graph_header">
         <h2>Progresso do Dia</h2>
