@@ -33,10 +33,35 @@
     </div>
 
     <div class="task_list">
+
     @foreach ($tasks as $task)
         <x-task :data=$task/>
     @endforeach
         
     </div>
 </section>
+<script>
+    async function taskUpdate(element) {
+        let done = element.checked;
+        let taskId = element.dataset.id;
+        let url = '{{route('task.update')}}';
+
+        let req = await fetch(url, {
+            method:'POST',
+            headers: {
+                'content-type':'application/json',
+                'accept': 'application/json'
+            },
+            body: JSON.stringify({done, taskId, _token:'{{csrf_token()}}'})
+        });
+
+        result = await req.json();
+        if(result.updated) {
+            alert('true');
+        } else {
+            element.checked = !done;
+        }
+
+    }
+</script>
 </x-layout>

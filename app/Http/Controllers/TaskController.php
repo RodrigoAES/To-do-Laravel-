@@ -57,6 +57,21 @@ class TaskController extends Controller
         return redirect(route('home'));
     }
 
+    public function update(Request $req) {
+        $response = ['error' => false];
+        $task = Task::find($req->taskId);
+        if(!$task) {
+            $response['error'] = 'task não existente.';
+            return $response;
+        }
+        
+        $task->is_done = $req->done;
+        $response['updated'] = $task->save();
+        $response['task'] = $task;
+
+        return $response;
+    }
+
     public function delete(Request $req) {
         $task = Task::find($req->id);
         if($task) {
